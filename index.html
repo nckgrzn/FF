@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="icon" href="./img/logo/FfLogoBlack.png">
+  <title>Ficher Fitness</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.css" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/rhj4inu.css">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    // Add smooth scrolling to all nav links
+    $(".nav-link").on('click', function(event) {
+
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  });
+  </script>
+
+  <style type="text/css">
+    html,
+    body,
+    header,
+    .view {
+      height: 100%;
+    }
+
+    @media (max-width: 740px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 1000px;
+      }
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 650px;
+      }
+    }
+    @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+    @media (max-width: 40em) {
+              .footer-collapse {
+                  display: none;
+              }
+          }
+  </style>
+</head>
+
+<body>
+  <!-- Load Stripe.js on your website. -->
+  <script src="https://js.stripe.com/v3"></script>
+
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml            : true,
+        version          : 'v5.0'
+      });
+    };
+
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <!-- Your customer chat code -->
+  <div class="fb-customerchat"
+    attribution=setup_tool
+    page_id="1810484285931559"
+    logged_in_greeting="Hi! How can we help you reach your fitness goals?"
+    logged_out_greeting="Hi! How can we help you reach your fitness goals?">
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container-fluid">
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent, #navbarSupportedContent2" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <!-- Links -->
+
+      <!-- Left -->
+      <ul class="navbar-nav nav-fill collapse navbar-collapse" id="navbarSupportedContent">
+        <li class="nav-item">
+          <a class="nav-link" href="#trainer">TRAINER
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#testimonials">TESTIMONIALS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#plans">PLANS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">SERVICES</a>
+        </li>
+      </ul>
+
+      <!-- Brand -->
+      <a class="navbar-brand nav-fill" style="margin-left:auto; margin-right:auto;" href="https://www.ficherfit.com/">
+        <img src="./img/logo/FfLogotypeWhite.svg" class="image" alt="logo" style="width: 200px; height: auto;">
+      </a>
+
+      <!-- Right -->
+      <ul class="navbar-nav nav-flex-icons nav-fill collapse navbar-collapse" id="navbarSupportedContent2">
+        <li class="nav-item">
+          <a href="https://www.facebook.com/ficherfit/" class="nav-link" target="_blank">
+            <i class="fab fa-facebook-f fa-lg"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://www.instagram.com/ficherfit/" class="nav-link" target="_blank">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://www.youtube.com/channel/UCztvyrdqq298K8WHwI04Oww/featured" class="nav-link" target="_blank">
+            <i class="fab fa-youtube fa-lg"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://open.spotify.com/playlist/5IcMWwYoAiDcbtdm5qZK7V?si=tzQE4ZS3RRCISNx_SbMuJg" class="nav-link" target="_blank">
+            <i class="fab fa-spotify fa-lg"></i>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <!--Carousel Wrapper-->
+  <div id="intro" class="carousel slide carousel-fade" data-ride="carousel">
+
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#intro" data-slide-to="0" class="active"></li>
+      <li data-target="#intro" data-slide-to="1"></li>
+    </ol>
+    <!--/.Indicators-->
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active">
+        <div class="view full-page-intro" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('./img/pics/background1.png'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+
+            <!-- Mask & flexbox options-->
+            <div class="mask d-flex justify-content-center align-items-center">
+
+              <!-- Content -->
+              <div class="container">
+
+                <!--Grid row-->
+                <div class="row">
+
+                  <!--Grid column-->
+                  <div class="white-text text-center w-100">
+
+                    <h1 class="display-4 font-weight-bold mt-5" style="line-height: 75px ; font-family: proxima-nova-extra-condensed; font-display: auto; font-style: italic; font-weight:900; font-size: 100px; margin: 0px; padding: 0px;">REACH YOUR FITNESS GOALS</h1>
+
+                    <p style="font-family: roboto; font-size: 37px; margin-top: 0px; padding-top: 0px; font-weight: 100;">
+                      Miami, Florida's most flexible fitness trainer
+                    </p>
+
+                    <a target="_blank" href="https://ficherfit.youcanbook.me" class="btn btn-lg" style="background-color: #F82247;">SCHEDULE FREE LESSON TODAY
+                    </a>
+
+                  </div>
+                  <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+              </div>
+              <!-- Content -->
+
+            </div>
+            <!-- Mask & flexbox options-->
+
+        </div>
+      </div>
+      <!--/First slide-->
+
+      <!--Second slide-->
+      <div class="carousel-item">
+        <div class="view" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('./img/pics/ftLaudyBeachCourt.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+
+            <!-- Mask & flexbox options-->
+            <div class="mask d-flex justify-content-center align-items-center">
+
+              <!-- Content -->
+              <div class="container">
+
+                <!--Grid row-->
+                <div class="row">
+
+                  <!--Grid column-->
+                  <div class="white-text text-center w-100">
+
+                    <h1 class="display-4 font-weight-bold mt-5" style="line-height: 75px ; font-family: proxima-nova-extra-condensed; font-display: auto; font-style: italic; font-weight:900; font-size: 100px; margin: 0px; padding: 0px;">UNLEASH YOUR INNER BALLER</h1>
+
+                    <p style="font-family: roboto; font-size: 37px; margin-top: 0px; padding-top: 0px; font-weight: 100;">
+                      Train with the female Steph Curry in sunny South Florida
+                    </p>
+
+                    <a target="_blank" href="https://ficherfit.youcanbook.me" class="btn btn-lg" style="background-color: #F82247;">SCHEDULE FREE LESSON TODAY
+                    </a>
+
+                  </div>
+                  <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+              </div>
+              <!-- Content -->
+
+            </div>
+            <!-- Mask & flexbox options-->
+
+        </div>
+      </div>
+      <!--/Second slide-->
+
+    </div>
+    <!--/.Slides-->
+
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#intro" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#intro" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
+
+  </div>
+  <!--/.Carousel Wrapper-->
+
+  <!--Main layout-->
+  <main>
+    <div class="container-fluid">
+
+      <!--Section: Trainer-->
+      <section class="my-5 wow fadeIn" id="trainer">
+
+        <!--Grid row-->
+        <div class="row pb-5" style="align-items: center;">
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 mb-3" style="text-align: center;">
+
+            <img src="./img/pics/yogaGirl.png" class="img-fluid" alt="" style="height: auto; width: 600px; max-width: auto; max-height: auto;">
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 mb-3">
+            <div class="container-fluid" style="width: 75%">
+              <!-- Main heading -->
+              <h3 class="h3" style="line-height: 62px; margin:0px; font-family: proxima-nova-extra-condensed; font-display: auto; font-style: italic; font-weight: 900; font-size: 60px;">CAROL FICHER</h3>
+              <p class="credentials">NCAA Collegiate Basketball Player</p>
+              <p class="credentials">ACSM Certified Personal Trainer</p>
+              <p class="credentials">B.S. Kinesiology and Exercise Science</p>
+              <!-- Main heading -->
+
+              <hr>
+
+              <p class="pb-4 pt-2" style="color: #8B8B8B; font-size: 18px; font-family: roboto-light;">
+                Hi! My name is Carol Ficher, and I have been involved in sports since I was 7 years old. My passion for fitness coaching started 6 years ago when I had a coach that changed the way I viewed fitness and nutrition. After receiving a degree in Exercise Science, I became a master in training and changing people's lives for the better.
+              </p>
+
+              <!-- Personal socials -->
+              <a href="https://www.facebook.com/caroline.ficher" target="_blank">
+                <i class="fab fa-facebook-f fa-lg" style="color: #3B5998; padding-right: 60px;"></i>
+              </a>
+              <a href="https://www.instagram.com/caficher/" target="_blank">
+                <i class="fab fa-instagram fa-lg mx-3 px-5" style="color: #CC3366"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/caroline-gnan-ficher-comptia-security-676961142" target="_blank">
+                <i class="fab fa-linkedin-in fa-lg" style="color: #0E76A8; padding-left: 60px"></i>
+              </a>
+            </div>
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </section>
+      <!--Section: Trainer-->
+    </main>
+
+    <main style="background: linear-gradient(180deg, #FFFFFF 50%, #F2F2F2 50%);">
+
+      <!--Section: Testimonials-->
+      <section id="testimonials" class="container-fluid">
+        <!--Grid row-->
+        <div class="row wow slideInUp" style="justify-content: center;">
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-auto py-3">
+
+            <!-- Card -->
+            <div class="card" style="width: 17rem; margin-left:auto; margin-right:auto;">
+
+              <!-- Card image -->
+              <img class="card-img-top" src="./img/pics/beforeAfter1.png" alt="Card image cap">
+
+              <!-- Card content -->
+              <div class="card-body">
+
+                <!-- Text -->
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+              </div>
+
+            </div>
+            <!-- Card -->
+
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-auto py-3">
+
+            <!-- Card -->
+            <div class="card" style="width: 17rem; margin-left:auto; margin-right:auto;">
+
+              <!-- Card image -->
+              <img class="card-img-top" src="./img/pics/beforeAfter2.png" alt="Card image cap">
+
+              <!-- Card content -->
+              <div class="card-body">
+
+                <!-- Text -->
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+              </div>
+
+            </div>
+            <!-- Card -->
+
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-auto py-3">
+
+            <!-- Card -->
+            <div class="card" style="width: 17rem; margin-left:auto; margin-right:auto;">
+
+              <!-- Card image -->
+              <img class="card-img-top" src="./img/pics/beforeAfter3.png" alt="Card image cap">
+
+              <!-- Card content -->
+              <div class="card-body">
+
+                <!-- Text -->
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+              </div>
+
+            </div>
+            <!-- Card -->
+
+          </div>
+          <!--/Grid column-->
+        </div>
+        <!--/Grid row-->
+      </section>
+      <!--Section: Testimonials-->
+    </main>
+
+        <div style="background-color: #F2F2F2; padding-bottom: 100px;">
+
+          <h1 class="h1 px-1 text-center wow animated zoomIn" style="padding-top: 100px; margin: 0; font-family: proxima-nova-extra-condensed; font-display: auto; font-style: italic; font-weight:900; font-size: 115px; color: #969696;">YOUR POTENTIAL IS ENDLESS</h1>
+
+          <div class="container-fluid" style="width: 84px; overflow: hidden;">
+              <div class="fb-like" data-href="https://www.facebook.com/ficherfit/" data-width="" data-layout="standard" data-action="like" data-size="large" data-share=""></div>
+          </div>
+
+        </div>
+
+    <!--Section: Plans-->
+    <section id="plans" class="container-fluid" style="background-color: #F2F2F2;">
+      <div class="row text-center animated wow slideInLeft">
+        <div class="col-lg-4 planBlock" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/pics/personalTraining.png');">
+          <div class="align-self-center py-5">
+            <p class="planTitle">PERSONAL TRAINING</p>
+            <p class="planPrice">$20<span class="planRate">/mo</span></p>
+            <p class="planDesc">Tailored to your goals</p>
+            <p class="planType">Monthly plans</p>
+            <button
+              class="btn btn-lg"
+              style="background-color:#F82247; padding:12px 48px;"
+              id="checkout-button-plan_GVNnO7GEv0uNxP"
+              role="link"
+            >
+              SIGN UP NOW
+            </button>
+
+            <div id="error-message"></div>
+
+            <script>
+            (function() {
+              var stripe = Stripe('pk_test_aYtShPwlxULQhbdKKZG3j3AP00SUjBtmPf');
+
+              var checkoutButton = document.getElementById('checkout-button-plan_GVNnO7GEv0uNxP');
+              checkoutButton.addEventListener('click', function () {
+                stripe.redirectToCheckout({
+                  items: [{plan: 'plan_GVNnO7GEv0uNxP', quantity: 1}],
+                  successUrl: 'https://www.ficherfit.com/#ptsuccess',
+                  cancelUrl: 'https://www.ficherfit.com/#plans',
+                })
+                .then(function (result) {
+                  if (result.error) {
+                    var displayError = document.getElementById('error-message');
+                    displayError.textContent = result.error.message;
+                  }
+                });
+              });
+            })();
+            </script>
+          </div>
+        </div>
+        <div class="col-lg-4 planBlock" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/pics/basketballTraining.png')">
+          <div class="align-self-center py-5">
+            <p class="planTitle">BASKETBALL TRAINING</p>
+            <p class="planPrice">$25<span class="planRate">/mo</span></p>
+            <p class="planDesc">Step your game up</p>
+            <p class="planType">Monthly plans</p>
+            <button
+              class="btn btn-lg"
+              style="background-color:#F82247; padding:12px 48px;"
+              id="checkout-button-plan_GVNpi1PX9ISerg"
+              role="link"
+            >
+              SIGN UP NOW
+            </button>
+
+            <div id="error-message"></div>
+
+            <script>
+            (function() {
+              var stripe = Stripe('pk_test_aYtShPwlxULQhbdKKZG3j3AP00SUjBtmPf');
+
+              var checkoutButton = document.getElementById('checkout-button-plan_GVNpi1PX9ISerg');
+              checkoutButton.addEventListener('click', function () {
+                stripe.redirectToCheckout({
+                  items: [{plan: 'plan_GVNpi1PX9ISerg', quantity: 1}],
+                  successUrl: 'https://www.ficherfit.com/#btsuccess',
+                  cancelUrl: 'https://www.ficherfit.com/#plans',
+                })
+                .then(function (result) {
+                  if (result.error) {
+                    var displayError = document.getElementById('error-message');
+                    displayError.textContent = result.error.message;
+                  }
+                });
+              });
+            })();
+            </script>
+          </div>
+        </div>
+        <div class="col-lg-4 planBlock" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/pics/mobilityTraining.png');">
+          <div class="align-self-center py-5">
+            <p class="planTitle">MOBILITY TRAINING</p>
+            <p class="planPrice">$15<span class="planRate">/mo</span></p>
+            <p class="planDesc">Become a supple leopard</p>
+            <p class="planType">Monthly plans</p>
+            <button
+              class="btn btn-lg"
+              style="background-color:#F82247; padding:12px 48px;"
+              id="checkout-button-plan_GVNpEFoCdZPoUl"
+              role="link"
+            >
+              SIGN UP NOW
+            </button>
+
+            <div id="error-message"></div>
+
+            <script>
+            (function() {
+              var stripe = Stripe('pk_test_aYtShPwlxULQhbdKKZG3j3AP00SUjBtmPf');
+
+              var checkoutButton = document.getElementById('checkout-button-plan_GVNpEFoCdZPoUl');
+              checkoutButton.addEventListener('click', function () {
+                stripe.redirectToCheckout({
+                  items: [{plan: 'plan_GVNpEFoCdZPoUl', quantity: 1}],
+                  successUrl: 'https://www.ficherfit.com/#mtsuccess',
+                  cancelUrl: 'https://www.ficherfit.com/#plans',
+                })
+                .then(function (result) {
+                  if (result.error) {
+                    var displayError = document.getElementById('error-message');
+                    displayError.textContent = result.error.message;
+                  }
+                });
+              });
+            })();
+            </script>
+          </div>
+        </div>
+        <!--<div class="col-lg-3 col-md-6 col-sm-12 planBlock" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/pics/personalTraining.png');">
+          <div class="align-self-center py-5">
+            <p class="planTitle">PERSONAL TRAINING</p>
+            <p class="planPrice">$20<span class="planRate">/mo</span></p>
+            <p class="planDesc">Tailored to your goals</p>
+            <p class="planType">Monthly plans</p>
+            <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-lg" style="background-color: #F82247; margin-bottom: 13px;">SIGN UP NOW
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 planBlock" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/pics/basketballTraining.png')">
+          <div class="align-self-center py-5">
+            <p class="planTitle">BASKETBALL TRAINING</p>
+            <p class="planPrice">$25<span class="planRate">/mo</span></p>
+            <p class="planDesc">Step your game up</p>
+            <p class="planType">Monthly plans</p>
+            <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-lg" style="background-color: #F82247; margin-bottom: 13px;">SIGN UP NOW
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 planBlock" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/pics/mobilityTraining.png');">
+          <div class="align-self-center py-5">
+            <p class="planTitle">MOBILITY TRAINING</p>
+            <p class="planPrice">$15<span class="planRate">/mo</span></p>
+            <p class="planDesc">Become a supple leopard</p>
+            <p class="planType">Monthly plans</p>
+            <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-lg" style="background-color: #F82247; margin-bottom: 13px;">SIGN UP NOW
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 planBlock" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/pics/gunMassage.png');">
+          <div class="align-self-center py-5">
+            <p class="planTitle">GUN MASSAGE</p>
+            <p class="planPrice">$1<span class="planRate">/min</span></p>
+            <p class="planDesc">Hammer out the kinks</p>
+            <p class="planType">10-minute intervals</p>
+            <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-lg" style="background-color: #F82247; margin-bottom: 13px;">SIGN UP NOW
+            </a>
+          </div>
+        </div>-->
+      </div>
+    </section>
+    <!--Section: Plans-->
+
+      <!--Section: Services-->
+      <main id="services" style="background-color: #2B2B2B">
+      <!--Section: Not enough-->
+      <section class="container-fluid">
+
+        <!--First row-->
+        <div class="row features-small pb-2 pt-1 wow fadeIn">
+
+          <!--First column-->
+          <div class="col-5">
+            <p class="serviceTitle mt-3 ml-2 h3 text-left">SERVICES</p>
+          </div>
+          <!--/First column-->
+
+          <!--Second column-->
+          <div class="col-7">
+            <p class="serviceTitle mt-3 h3 text-left">DESCRIPTION</p>
+          </div>
+          <!--/Second column-->
+
+        </div>
+        <!--/First row-->
+
+      </section>
+
+      <section class="container-fluid">
+
+        <div class="row">
+          <div class="col-5 px-0" >
+            <div class="list-group" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action active waves-effect" id="list-pt-list" data-toggle="list" href="#list-pt"
+                role="tab" aria-controls="pt" style="display: flex; flex-direction: row; align-items: center;"><i class="personal mr-4 pr-3"></i>Personal Training<div style="width: 45px; height: 100%;"></div><i class="chevron"></i></a>
+              <a class="list-group-item list-group-item-action waves-effect" id="list-bt-list" data-toggle="list" href="#list-bt"
+                role="tab" aria-controls="bt" style="display: flex; flex-direction: row; align-items: center;"><i class="basketball mr-4 pr-3"></i>Basketball Training<div style="width: 45px; height: 100%;"></div><i class="chevron"></i></a>
+              <a class="list-group-item list-group-item-action waves-effect" id="list-mt-list" data-toggle="list" href="#list-mt"
+                role="tab" aria-controls="mt" style="display: flex; flex-direction: row; align-items: center;"><i class="mobility mr-4 pr-3"></i>Mobility Training<div style="width: 45px; height: 100%;"></div><i class="chevron"></i></a>
+            </div>
+          </div>
+          <div class="col-7" style="color: white; font-weight: 100">
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="list-pt" role="tabpanel" aria-labelledby="list-pt-list">
+                  Velit aute mollit ipsum ad dolor consectetur nulla officia culpa adipisicing exercitation fugiat
+                  tempor. Voluptate deserunt sit sunt nisi aliqua fugiat proident ea ut. Mollit voluptate reprehenderit
+                  occaecat nisi ad non minim tempor sunt voluptate consectetur exercitation id ut nulla. Ea et fugiat
+                  aliquip nostrud sunt incididunt consectetur culpa aliquip eiusmod dolor. Anim ad Lorem aliqua in
+                  cupidatat nisi enim eu nostrud do aliquip veniam minim.
+                  <div style="width: 100%; height: 100px;"></div>
+                  <div class="row w-100" style="background-color: #606060; bottom: 0; position: absolute;">
+                    <p class="ml-3 my-2">
+                      <span style="font-weight: 900;">Includes:</span>
+                      <br>
+                      1-2 weekly workout routines
+                      <br>
+                      Nutrition tips and guidelines
+                    </p>
+                  </div>
+              </div>
+              <div class="tab-pane fade" id="list-bt" role="tabpanel" aria-labelledby="list-bt-list">
+                  Cupidatat quis ad sint excepteur laborum in esse qui. Et excepteur consectetur ex nisi eu do cillum ad
+                  laborum. Mollit et eu officia dolore sunt Lorem culpa qui commodo velit ex amet id ex. Officia anim
+                  incididunt laboris deserunt anim aute dolor incididunt veniam aute dolore do exercitation. Dolor nisi
+                  culpa ex ad irure in elit eu dolore. Ad laboris ipsum reprehenderit irure non commodo enim culpa
+                  commodo veniam incididunt veniam ad.
+                  <div style="width: 100%; height: 100px;"></div>
+                  <div class="row w-100" style="background-color: #606060; bottom: 0; position: absolute;">
+                    <p class="ml-3 my-2">
+                      <span style="font-weight: 900;">Includes:</span>
+                      <br>
+                      3-4 weekly workout routines
+                      <br>
+                      Nutrition tips and guidelines
+                    </p>
+                  </div>
+              </div>
+              <div class="tab-pane fade" id="list-mt" role="tabpanel" aria-labelledby="list-mt-list">
+                  Ut ut do pariatur aliquip aliqua aliquip exercitation do nostrud commodo reprehenderit aute ipsum
+                  voluptate. Irure Lorem et laboris nostrud amet cupidatat cupidatat anim do ut velit mollit consequat
+                  enim tempor. Consectetur est minim nostrud nostrud consectetur irure labore voluptate irure. Ipsum id
+                  Lorem sit sint voluptate est pariatur eu ad cupidatat et deserunt culpa sit eiusmod deserunt.
+                  Consectetur et fugiat anim do eiusmod aliquip nulla laborum elit adipisicing pariatur cillum.
+                  <div style="width: 100%; height: 100px;"></div>
+                  <div class="row w-100" style="background-color: #606060; bottom: 0; position: absolute;">
+                    <p class="ml-3 my-2">
+                      <span style="font-weight: 900;">Includes:</span>
+                      <br>
+                      5-6 weekly workout routines
+                      <br>
+                      Nutrition tips and guidelines
+                    </p>
+                  </div>
+              </div>
+              <!--<a class="list-group-item list-group-item-action waves-effect" id="list-gm-list" data-toggle="list" href="#list-gm"
+                role="tab" aria-controls="gm" style="display: flex; flex-direction: row; align-items: center;"><i class="fa fa-laptop mr-4 pr-3"></i>Gun Massage</a>
+            </div>
+          </div>
+          <div class="col-7" style="color: white; font-weight: 100">
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="list-pt" role="tabpanel" aria-labelledby="list-pt-list">
+                <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-primary form-check-label active py-2" style="box-shadow: none; font-size: 10px;">
+                    <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off" checked onchange="ptDescSwap()">
+                    IN-PERSON
+                  </label>
+                  <label class="btn btn-primary form-check-label py-2" style="box-shadow: none; font-size: 10px;">
+                    <input class="form-check-input" type="radio" name="options" id="option2" autocomplete="off" onchange="ptDescSwap()"> VIRTUAL
+                  </label>
+
+                </div>
+                <div style="width: 100%; height: 12px;"></div>
+                <div id="ptd">
+                    Velit aute mollit ipsum ad dolor consectetur nulla officia culpa adipisicing exercitation fugiat
+                    tempor. Voluptate deserunt sit sunt nisi aliqua fugiat proident ea ut. Mollit voluptate reprehenderit
+                    occaecat nisi ad non minim tempor sunt voluptate consectetur exercitation id ut nulla. Ea et fugiat
+                    aliquip nostrud sunt incididunt consectetur culpa aliquip eiusmod dolor. Anim ad Lorem aliqua in
+                    cupidatat nisi enim eu nostrud do aliquip veniam minim.
+                    <div style="width: 100%; height: 100px;"></div>
+                    <div class="row w-100" style="background-color: #606060; bottom: 0; position: absolute;">
+                      <p class="ml-3 my-2">
+                        <span style="font-weight: 900;">Includes:</span>
+                        <br>
+                        3-5 weekly workout routines
+                        <br>
+                        Nutrition tips and guidelines
+                      </p>
+                    </div>
+                </div>
+                <div id="ptv" style="display: none;">
+                  PT Test
+                  <div style="width: 100%; height: 100px;"></div>
+                  <div class="row w-100" style="background-color: #606060; bottom: 0; position: absolute;">
+                    <p class="ml-3 my-2">
+                      <span style="font-weight: 900;">PT Test:</span>
+                      <br>
+                      3-5 weekly workout routines
+                      <br>
+                      Nutrition tips and guidelines
+                    </p>
+                  </div>
+                </div>
+                <script>
+                  var ptd = document.getElementById("ptd");
+                  var ptip = document.getElementById("ptd").innerHTML;
+                  var ptv = document.getElementById("ptv").innerHTML
+                  function ptDescSwap() {
+                    if (ptd.innerHTML === ptip)
+                  {
+                      ptd.innerHTML = ptv;
+                  } else {
+                      ptd.innerHTML = ptip;
+                    }
+                  }
+                </script>
+              </div>
+              <div class="tab-pane fade" id="list-bt" role="tabpanel" aria-labelledby="list-bt-list">
+                <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-primary form-check-label active py-2" style="box-shadow: none; font-size: 10px;">
+                    <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off" checked onchange="btDescSwap()">
+                    IN-PERSON
+                  </label>
+                  <label class="btn btn-primary form-check-label py-2" style="box-shadow: none; font-size: 10px;">
+                    <input class="form-check-input" type="radio" name="options" id="option2" autocomplete="off" onchange="btDescSwap()"> VIRTUAL
+                  </label>
+                </div>
+                <div style="width: 100%; height: 12px;"></div>
+                <div id="btd">
+                  Cupidatat quis ad sint excepteur laborum in esse qui. Et excepteur consectetur ex nisi eu do cillum ad
+                  laborum. Mollit et eu officia dolore sunt Lorem culpa qui commodo velit ex amet id ex. Officia anim
+                  incididunt laboris deserunt anim aute dolor incididunt veniam aute dolore do exercitation. Dolor nisi
+                  culpa ex ad irure in elit eu dolore. Ad laboris ipsum reprehenderit irure non commodo enim culpa
+                  commodo veniam incididunt veniam ad.
+                  <div style="width: 100%; height: 100px;"></div>
+                  <div class="row w-100" style="background-color: #606060; bottom: 0; position: absolute;">
+                    <p class="ml-3 my-2">
+                      <span style="font-weight: 900;">Includes:</span>
+                      <br>
+                      3-5 weekly workout routines
+                      <br>
+                      Nutrition tips and guidelines
+                    </p>
+                  </div>
+                </div>
+                <div id="btv" style="display: none;">
+                  BT Test
+                  <div style="width: 100%; height: 100px;"></div>
+                  <div class="row w-100" style="background-color: #606060; bottom: 0; position: absolute;">
+                    <p class="ml-3 my-2">
+                      <span style="font-weight: 900;">BT Test:</span>
+                      <br>
+                      3-5 weekly workout routines
+                      <br>
+                      Nutrition tips and guidelines
+                    </p>
+                  </div>
+                </div>
+                <script>
+                  var btd = document.getElementById("btd");
+                  var btip = document.getElementById("btd").innerHTML;
+                  var btv = document.getElementById("btv").innerHTML
+                  function btDescSwap() {
+                    if (btd.innerHTML === btip)
+                  {
+                      btd.innerHTML = btv;
+                  } else {
+                      btd.innerHTML = btip;
+                    }
+                  }
+                </script>
+              </div>
+              <div class="tab-pane fade" id="list-mt" role="tabpanel" aria-labelledby="list-mt-list">
+                <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-primary form-check-label active py-2" style="box-shadow: none; font-size: 10px;">
+                    <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off" checked onchange="mtDescSwap()">
+                    IN-PERSON
+                  </label>
+                  <label class="btn btn-primary form-check-label py-2" style="box-shadow: none; font-size: 10px;">
+                    <input class="form-check-input" type="radio" name="options" id="option2" autocomplete="off" onchange="mtDescSwap()"> VIRTUAL
+                  </label>
+                </div>
+                <div style="width: 100%; height: 12px;"></div>
+                <div id="mtd">
+                    Ut ut do pariatur aliquip aliqua aliquip exercitation do nostrud commodo reprehenderit aute ipsum
+                    voluptate. Irure Lorem et laboris nostrud amet cupidatat cupidatat anim do ut velit mollit consequat
+                    enim tempor. Consectetur est minim nostrud nostrud consectetur irure labore voluptate irure. Ipsum id
+                    Lorem sit sint voluptate est pariatur eu ad cupidatat et deserunt culpa sit eiusmod deserunt.
+                    Consectetur et fugiat anim do eiusmod aliquip nulla laborum elit adipisicing pariatur cillum.
+                    <div style="width: 100%; height: 100px;"></div>
+                    <div class="row w-100" style="background-color: #606060; bottom: 0; position: absolute;">
+                      <p class="ml-3 my-2">
+                        <span style="font-weight: 900;">Includes:</span>
+                        <br>
+                        3-5 weekly workout routines
+                        <br>
+                        Nutrition tips and guidelines
+                      </p>
+                    </div>
+                </div>
+              </div>
+              <div id="mtv" style="display: none;">
+                MT Test
+                <div style="width: 100%; height: 100px;"></div>
+                <div class="row w-100" style="background-color: #606060; bottom: 0; position: absolute;">
+                  <p class="ml-3 my-2">
+                    <span style="font-weight: 900;">MT Test:</span>
+                    <br>
+                    3-5 weekly workout routines
+                    <br>
+                    Nutrition tips and guidelines
+                  </p>
+                </div>
+              </div>
+              <script>
+                var mtd = document.getElementById("mtd");
+                var mtip = document.getElementById("mtd").innerHTML;
+                var mtv = document.getElementById("mtv").innerHTML
+                function mtDescSwap() {
+                  if (mtd.innerHTML === mtip)
+                {
+                    mtd.innerHTML = mtv;
+                } else {
+                    mtd.innerHTML = mtip;
+                  }
+                }
+              </script>
+              <div class="tab-pane fade" id="list-gm" role="tabpanel" aria-labelledby="list-gm-list">
+                <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-primary form-check-label active py-2" style="box-shadow: none; font-size: 10px;">
+                    <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off" checked>
+                    IN-PERSON
+                  </label>
+                </div>
+                <div style="width: 100%; height: 12px;"></div>
+                Irure enim occaecat labore sit qui aliquip reprehenderit amet velit. Deserunt ullamco ex elit nostrud
+                ut dolore nisi officia magna sit occaecat laboris sunt dolor. Nisi eu minim cillum occaecat aute est
+                cupidatat aliqua labore aute occaecat ea aliquip sunt amet. Aute mollit dolor ut exercitation irure
+                commodo non amet consectetur quis amet culpa. Quis ullamco nisi amet qui aute irure eu. Magna labore
+                dolor quis ex labore id nostrud deserunt dolor eiusmod eu pariatur culpa mollit in irure.
+                <div style="width: 100%; height: 100px;"></div>
+                <div class="row w-100" style="background-color: #606060; bottom: 0; position: absolute;">
+                  <p class="ml-3 my-2">
+                    <span style="font-weight: 900;">Includes:</span>
+                    <br>
+                    3-5 weekly workout routines
+                    <br>
+                    Nutrition tips and guidelines
+                  </p>
+                </div>
+              </div>-->
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <!--Section: Services-->
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small">
+
+    <!--Call to action-->
+    <div class="py-3" style="background-color: #171717;">
+      <a class="btn btn-outline-white" href="https://ficherfit.youcanbook.me" target="_blank" role="button">SCHEDULE FREE LESSON TODAY
+      </a>
+    </div>
+    <!--/.Call to action-->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3" style="background-color: black; color: #969696">
+      © <script>document.write(new Date().getFullYear());</script> Ficher Fit. All Rights Reserved.
+      <div class="row">
+        <div class="col-3 text-left">
+          <a class="ml-4 footer-collapse" href="mailto:contact@ficherfit.com" style="color: #969696">ficherfit@gmail.com</a>
+        </div>
+        <div class="col-6">
+        <p class="pb-0 mb-0">
+          <a style="color: #303030" href="https://www.linkedin.com/in/nickgarzon" target="_blank"> Made in Miami by Nick with ♥︎ </a>
+        </p>
+        </div>
+        <div class="col-3 text-right">
+          <a class="mr-4 footer-collapse" href="https://www.instagram.com/explore/tags/ficherfit/" style="color: #969696" target="_blank">#ficherfit</a>
+        </div>
+      </div>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!--Success windows-->
+  <!--Launch scripts-->
+  <script>
+    $(document).ready(function() {
+
+    if(window.location.href.indexOf('#ptsuccess') != -1) {
+    $('#ptsuccess').modal('show');
+    }
+
+    });
+  </script>
+
+  <script>
+    $(document).ready(function() {
+
+    if(window.location.href.indexOf('#btsuccess') != -1) {
+    $('#btsuccess').modal('show');
+    }
+
+    });
+  </script>
+
+  <script>
+    $(document).ready(function() {
+
+    if(window.location.href.indexOf('#mtsuccess') != -1) {
+    $('#mtsuccess').modal('show');
+    }
+
+    });
+  </script>
+  <!--/.Launch scripts-->
+
+  <!--Personal Training Modal-->
+  <div class="modal fade" id="ptsuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-success" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="modalTitle pt-1" style="margin-bottom: auto;">CONGRATULATIONS</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+          <p class="text-left">You have successfully purchased a <strong>monthly subscription</strong> to Ficher Fit's <strong>Personal Training</strong> program.
+            We wish you the best on your fitness journey and will be alongside you to help you reach your goals!</p>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center modalFooter text-center">
+          If you do not receive an emailed receipt within 24 hours or wish to cancel your subscription at any time, please email contact@ficherfit.com
+        </div>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+  </div>
+  <!--/.Personal Training Modal-->
+
+  <!--Basketball Training Modal-->
+  <div class="modal fade" id="btsuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-success" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="modalTitle pt-1" style="margin-bottom: auto;">CONGRATULATIONS</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+          <p class="text-left">You have successfully purchased a <strong>monthly subscription</strong> to Ficher Fit's <strong>Basketball Training</strong> program.
+            We wish you the best on your fitness journey and will be alongside you to help you reach your goals!</p>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center modalFooter text-center">
+          If you do not receive an emailed receipt within 24 hours or wish to cancel your subscription at any time, please email contact@ficherfit.com
+        </div>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+  </div>
+  <!--/.Basketball Training Modal-->
+
+  <!--Mobility Training Modal-->
+  <div class="modal fade" id="mtsuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-success" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="modalTitle pt-1" style="margin-bottom: auto;">CONGRATULATIONS</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+          <p class="text-left">You have successfully purchased a <strong>monthly subscription</strong> to Ficher Fit's <strong>Mobility Training</strong> program.
+            We wish you the best on your fitness journey and will be alongside you to help you reach your goals!</p>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center modalFooter text-center">
+          If you do not receive an emailed receipt within 24 hours or wish to cancel your subscription at any time, please email contact@ficherfit.com
+        </div>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+  </div>
+  <!--/.Mobility Training Modal-->
+  <!--/.Success windows-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
+</body>
+
+</html>
