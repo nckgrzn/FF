@@ -71,21 +71,17 @@
         height: 650px;
       }
     }
-    @media (min-width: 800px) and (max-width: 850px) {
-              .navbar:not(.top-nav-collapse) {
-                  background: #1C2331!important;
-              }
-          }
-    @media (max-width: 40em) {
+
+    @media (max-width: 575px) {
               .footer-collapse {
                   display: none;
               }
           }
-    @media screen and (max-width: 600px) {
-            #motivation {
-              font-size: 68px;
-            }
-          }
+    @media (max-width: 500px) {
+        .chevron {
+            display: none;
+        }
+    }
   </style>
 </head>
 
@@ -151,7 +147,7 @@
 
       <!-- Brand -->
       <a class="navbar-brand nav-fill" style="margin-left:auto; margin-right:auto;" href="https://www.ficherfit.com/">
-        <img src="./img/logo/FfLogotypeWhite.svg" class="image" alt="logo" style="width: 200px; height: auto;">
+        <img id="logo" src="./img/logo/FfLogotypeWhite.svg" class="image" alt="logo">
       </a>
 
       <!-- Right -->
@@ -213,7 +209,7 @@
 
                     <h1 class="display-4 font-weight-bold mt-5" style="line-height: 75px ; font-family: proxima-nova-extra-condensed; font-display: auto; font-style: italic; font-weight:900; font-size: 100px; margin: 0px; padding: 0px;">REACH YOUR FITNESS GOALS</h1>
 
-                    <p style="font-family: roboto; font-size: 37px; margin-top: 0px; padding-top: 0px; font-weight: 100;">
+                    <p id="tagline" style="font-family: roboto; margin-top: 0px; padding-top: 0px; font-weight: 100;">
                       Miami, Florida's most flexible fitness trainer
                     </p>
 
@@ -254,7 +250,7 @@
 
                     <h1 class="display-4 font-weight-bold mt-5" style="line-height: 75px ; font-family: proxima-nova-extra-condensed; font-display: auto; font-style: italic; font-weight:900; font-size: 100px; margin: 0px; padding: 0px;">UNLEASH YOUR INNER BALLER</h1>
 
-                    <p style="font-family: roboto; font-size: 37px; margin-top: 0px; padding-top: 0px; font-weight: 100;">
+                    <p id="tagline" style="font-family: roboto; margin-top: 0px; padding-top: 0px; font-weight: 100;">
                       Train with the female Steph Curry in sunny South Florida
                     </p>
 
@@ -316,7 +312,7 @@
           <div class="col-lg-6 col-md-12 mb-3">
             <div class="container-fluid" style="width: 75%">
               <!-- Main heading -->
-              <h3 class="h3" style="line-height: 62px; margin:0px; font-family: proxima-nova-extra-condensed; font-display: auto; font-style: italic; font-weight: 900; font-size: 60px;">CAROL FICHER</h3>
+              <h3 class="h3" id="falname" style="line-height: 62px; margin:0px; font-family: proxima-nova-extra-condensed; font-display: auto; font-style: italic; font-weight: 900;">CAROL FICHER</h3>
               <p class="credentials">NCAA Collegiate Basketball Player</p>
               <p class="credentials">ACSM Certified Personal Trainer</p>
               <p class="credentials">B.S. Kinesiology and Exercise Science</p>
@@ -329,15 +325,17 @@
               </p>
 
               <!-- Personal socials -->
-              <a href="https://www.facebook.com/caroline.ficher" target="_blank">
-                <i class="fab fa-facebook-f fa-lg" style="color: #3B5998; padding-right: 60px;"></i>
-              </a>
-              <a href="https://www.instagram.com/caficher/" target="_blank">
-                <i class="fab fa-instagram fa-lg mx-3 px-5" style="color: #CC3366"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/caroline-gnan-ficher-comptia-security-676961142" target="_blank">
-                <i class="fab fa-linkedin-in fa-lg" style="color: #0E76A8; padding-left: 60px"></i>
-              </a>
+              <div style="display: flex; justify-content: space-between;">
+                <a href="https://www.facebook.com/caroline.ficher" target="_blank">
+                  <i class="fab fa-facebook-f fa-lg" style="color: #3B5998;"></i>
+                </a>
+                <a href="https://www.instagram.com/caficher/" target="_blank">
+                  <i class="fab fa-instagram fa-lg" style="color: #CC3366"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/caroline-gnan-ficher-comptia-security-676961142" target="_blank">
+                  <i class="fab fa-linkedin-in fa-lg" style="color: #0E76A8;"></i>
+                </a>
+              </div>
             </div>
           </div>
           <!--Grid column-->
@@ -432,7 +430,7 @@
 
         <div style="background-color: #F2F2F2; padding-bottom: 100px;">
 
-          <h1 id="motivation" class="h1 px-1 text-center wow animated zoomIn" style="padding-top: 100px; margin: 0; font-family: proxima-nova-extra-condensed; font-display: auto; font-style: italic; font-weight:900; font-size: 115px; color: #969696;">YOUR POTENTIAL IS ENDLESS</h1>
+          <h1 id="motivation" class="h1 px-1 text-center wow animated zoomIn" style="padding-top: 100px; margin: 0; font-family: proxima-nova-extra-condensed; font-display: auto; font-style: italic; font-weight:900; color: #969696;">YOUR POTENTIAL IS ENDLESS</h1>
 
           <div class="container-fluid" style="width: 84px; overflow: hidden;">
               <div class="fb-like" data-href="https://www.facebook.com/ficherfit/" data-width="" data-layout="standard" data-action="like" data-size="large" data-share=""></div>
@@ -915,17 +913,17 @@
     <!--Copyright-->
     <div class="footer-copyright py-3" style="background-color: black; color: #969696">
       © <script>document.write(new Date().getFullYear());</script> Ficher Fit. All Rights Reserved.
-      <div class="row">
-        <div class="col-3 text-left">
+      <div style="display: flex; justify-content: space-between;">
+        <div class="col-3 text-left footer-collapse">
           <a class="ml-4 footer-collapse" href="mailto:contact@ficherfit.com" style="color: #969696">ficherfit@gmail.com</a>
         </div>
-        <div class="col-6">
+        <div class="col-lg-6 col-md-6 col-sm-auto text-center">
         <p class="pb-0 mb-0">
           <a style="color: #303030" href="https://www.linkedin.com/in/nickgarzon" target="_blank"> Made in Miami by Nick with ♥︎ </a>
         </p>
         </div>
-        <div class="col-3 text-right">
-          <a class="mr-4 footer-collapse" href="https://www.instagram.com/explore/tags/ficherfit/" style="color: #969696" target="_blank">#ficherfit</a>
+        <div class="col-3 text-right footer-collapse">
+          <a class="mr-4" href="https://www.instagram.com/explore/tags/ficherfit/" style="color: #969696" target="_blank">#ficherfit</a>
         </div>
       </div>
     </div>

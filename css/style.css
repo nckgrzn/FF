@@ -22,14 +22,36 @@ body,
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
 
-/* Adding color to the Navbar on mobile */
-@media only screen and (max-width: 768px) {
-  .navbar {
-    background-color: #1C2331; } }
+/* Navbar */
+
+@media screen and (max-width: 851px) {
+  #logo {
+    width:200px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 851px) {
+  #logo {
+    width: 200px;
+    height: auto;
+  }
+}
 
 /* Footer color for sake of consistency with Navbar */
 .page-footer {
   background-color: #1C2331; }
+
+/* Intro */
+@media screen and (max-width: 451px) {
+  #tagline {
+    font-size: 27px;
+  }
+}
+@media screen and (min-width: 451px) {
+  #tagline {
+    font-size: 37px;
+  }
+}
 
 /* Trainer section */
 .credentials {
@@ -37,6 +59,17 @@ body,
   color: #707070;
   margin: 0px;
   font-size: 16px;
+}
+
+@media screen and (max-width: 480px) {
+  #falname {
+    font-size: 44px;
+  }
+}
+@media screen and (min-width: 480px) {
+  #falname {
+    font-size: 60px;
+  }
 }
 
 /* Plans section */
@@ -150,4 +183,16 @@ body,
   color: #c5c5c5;
   font-size: 13px;
   background-color: #f0f0f0;
+}
+
+/* Motivational Quote */
+@media screen and (max-width: 600px) {
+  #motivation {
+    font-size: 85px;
+  }
+}
+@media screen and (min-width: 600px) {
+  #motivation {
+    font-size: 115px;
+  }
 }
