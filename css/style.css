@@ -55,10 +55,11 @@ body,
 
 /* Trainer section */
 .credentials {
-  font-family: roboto-thin;
+  font-family: roboto;
   color: #707070;
   margin: 0px;
   font-size: 16px;
+  font-weight: 100;
 }
 
 @media screen and (max-width: 480px) {
