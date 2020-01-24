@@ -92,8 +92,9 @@
 </head>
 
 <body>
-  <!-- Load Stripe.js on your website. -->
-  <script src="https://js.stripe.com/v3"></script>
+
+  <!-- Load Chargebee -->
+  <script src = "https://js.chargebee.com/v2/chargebee.js"  data-cb-site = "ficherfit" > </script>
 
   <!-- Load Facebook SDK for JavaScript -->
   <div id="fb-root"></div>
@@ -456,34 +457,13 @@
             <button
               class="btn btn-lg"
               style="background-color:#FF2247; padding:12px 48px;"
-              id="checkout-button-plan_GVNnO7GEv0uNxP"
+              href = "javascript:void(0)"
+              data-cb-type = "checkout"
+              data-cb-plan-id = "pt"
               role="link"
             >
               SIGN UP NOW
             </button>
-
-            <div id="error-message"></div>
-
-            <script>
-            (function() {
-              var stripe = Stripe('pk_test_aYtShPwlxULQhbdKKZG3j3AP00SUjBtmPf');
-
-              var checkoutButton = document.getElementById('checkout-button-plan_GVNnO7GEv0uNxP');
-              checkoutButton.addEventListener('click', function () {
-                stripe.redirectToCheckout({
-                  items: [{plan: 'plan_GVNnO7GEv0uNxP', quantity: 1}],
-                  successUrl: 'https://www.ficherfit.com/#ptsuccess',
-                  cancelUrl: 'https://www.ficherfit.com/#plans',
-                })
-                .then(function (result) {
-                  if (result.error) {
-                    var displayError = document.getElementById('error-message');
-                    displayError.textContent = result.error.message;
-                  }
-                });
-              });
-            })();
-            </script>
           </div>
         </div>
         <div class="col-lg-4 planBlock" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/pics/basketballTraining.png')">
@@ -495,34 +475,13 @@
             <button
               class="btn btn-lg"
               style="background-color:#FF2247; padding:12px 48px;"
-              id="checkout-button-plan_GVNpi1PX9ISerg"
+              href = "javascript:void(0)"
+              data-cb-type = "checkout"
+              data-cb-plan-id = "bt"
               role="link"
             >
               SIGN UP NOW
             </button>
-
-            <div id="error-message"></div>
-
-            <script>
-            (function() {
-              var stripe = Stripe('pk_test_aYtShPwlxULQhbdKKZG3j3AP00SUjBtmPf');
-
-              var checkoutButton = document.getElementById('checkout-button-plan_GVNpi1PX9ISerg');
-              checkoutButton.addEventListener('click', function () {
-                stripe.redirectToCheckout({
-                  items: [{plan: 'plan_GVNpi1PX9ISerg', quantity: 1}],
-                  successUrl: 'https://www.ficherfit.com/#btsuccess',
-                  cancelUrl: 'https://www.ficherfit.com/#plans',
-                })
-                .then(function (result) {
-                  if (result.error) {
-                    var displayError = document.getElementById('error-message');
-                    displayError.textContent = result.error.message;
-                  }
-                });
-              });
-            })();
-            </script>
           </div>
         </div>
         <div class="col-lg-4 planBlock" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/pics/mobilityTraining.png');">
@@ -534,34 +493,13 @@
             <button
               class="btn btn-lg"
               style="background-color:#FF2247; padding:12px 48px;"
-              id="checkout-button-plan_GVNpEFoCdZPoUl"
+              href = "javascript:void(0)"
+              data-cb-type = "checkout"
+              data-cb-plan-id = "mt"
               role="link"
             >
               SIGN UP NOW
             </button>
-
-            <div id="error-message"></div>
-
-            <script>
-            (function() {
-              var stripe = Stripe('pk_test_aYtShPwlxULQhbdKKZG3j3AP00SUjBtmPf');
-
-              var checkoutButton = document.getElementById('checkout-button-plan_GVNpEFoCdZPoUl');
-              checkoutButton.addEventListener('click', function () {
-                stripe.redirectToCheckout({
-                  items: [{plan: 'plan_GVNpEFoCdZPoUl', quantity: 1}],
-                  successUrl: 'https://www.ficherfit.com/#mtsuccess',
-                  cancelUrl: 'https://www.ficherfit.com/#plans',
-                })
-                .then(function (result) {
-                  if (result.error) {
-                    var displayError = document.getElementById('error-message');
-                    displayError.textContent = result.error.message;
-                  }
-                });
-              });
-            })();
-            </script>
           </div>
         </div>
         <!--<div class="col-lg-3 col-md-6 col-sm-12 planBlock" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/pics/personalTraining.png');">
@@ -910,9 +848,16 @@
   <footer class="page-footer text-center font-small">
 
     <!--Call to action-->
-    <div class="py-3" style="background-color: #171717;">
-      <a class="btn btn-outline-white" href="https://ficherfit.youcanbook.me" target="_blank" role="button">START FREE TRIAL TODAY
-      </a>
+    <div class="row container-fluid m-0 p-0">
+      <div class="col-6 py-3 text-right mx-0 px-2" style="background-color: #171717;">
+        <a class="btn btn-outline-white" href="https://ficherfit.youcanbook.me" target="_blank" role="button">START FREE TRIAL TODAY
+        </a>
+      </div>
+
+      <div class="col-6 py-3 text-left mx-0 px-2" style="background-color: #171717;">
+        <a class="btn btn-outline-white" href = "javascript:void(0)"  data-cb-type = "portal" role="button">MANAGE ACCOUNT
+        </a>
+      </div>
     </div>
     <!--/.Call to action-->
 
@@ -937,163 +882,6 @@
 
   </footer>
   <!--/.Footer-->
-
-  <!--Success windows-->
-  <!--Launch scripts-->
-  <script>
-    $(document).ready(function() {
-
-    if(window.location.href.indexOf('#ptsuccess') != -1) {
-    $('#ptsuccess').modal('show');
-    }
-
-    });
-  </script>
-
-  <script>
-    $(document).ready(function() {
-
-    if(window.location.href.indexOf('#btsuccess') != -1) {
-    $('#btsuccess').modal('show');
-    }
-
-    });
-  </script>
-
-  <script>
-    $(document).ready(function() {
-
-    if(window.location.href.indexOf('#mtsuccess') != -1) {
-    $('#mtsuccess').modal('show');
-    }
-
-    });
-  </script>
-  <!--/.Launch scripts-->
-
-  <!--Personal Training Modal-->
-  <div class="modal fade" id="ptsuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-notify modal-success" role="document">
-    <!--Content-->
-    <div class="modal-content">
-      <!--Header-->
-      <div class="modal-header">
-        <p class="modalTitle pt-1" style="margin-bottom: auto;">CONGRATULATIONS</p>
-
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true" class="white-text">&times;</span>
-        </button>
-      </div>
-
-      <!--Body-->
-      <div class="modal-body">
-        <div class="text-center">
-          <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
-          <div class="text-left">You have successfully purchased a <strong>monthly subscription</strong> to Ficher Fit's <strong>Personal Training</strong> program. 
-            Thank you for trusting us to join you on your fitness journey!</div>
-        </div>
-      </div>
-
-      <!--Footer-->
-      <div class="modal-footer justify-content-center modalFooter" style="color: #969696; align-items: center;">
-        <div class="row">
-          <div class="col-2" style="background:url('./img/icons/info-circle-icon.svg') center center no-repeat; background-size: 30px 30px;">
-          </div>
-          <div class="col-10 m-0" style="font-size: 15px; margin-left: 0; padding-left: 0;">
-            Please look out for an emailed receipt with further information on how to access our resources and what to expect.
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-    <!--/.Content-->
-  </div>
-  </div>
-  <!--/.Personal Training Modal-->
-
-  <!--Basketball Training Modal-->
-  <div class="modal fade" id="btsuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-notify modal-success" role="document">
-    <!--Content-->
-    <div class="modal-content">
-      <!--Header-->
-      <div class="modal-header">
-        <p class="modalTitle pt-1" style="margin-bottom: auto;">CONGRATULATIONS</p>
-
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true" class="white-text">&times;</span>
-        </button>
-      </div>
-
-      <!--Body-->
-      <div class="modal-body">
-        <div class="text-center">
-          <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
-          <div class="text-left">You have successfully purchased a <strong>monthly subscription</strong> to Ficher Fit's <strong>Basketball Training</strong> program.
-            Thank you for trusting us to join you on your fitness journey!</div>
-        </div>
-      </div>
-
-      <!--Footer-->
-      <div class="modal-footer justify-content-center modalFooter" style="color: #969696; align-items: center;">
-        <div class="row">
-          <div class="col-2" style="background:url('./img/icons/info-circle-icon.svg') center center no-repeat; background-size: 30px 30px;">
-          </div>
-          <div class="col-10 m-0" style="font-size: 15px; margin-left: 0; padding-left: 0;">
-            Please look out for an emailed receipt with further information on how to access our resources and what to expect.
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-    <!--/.Content-->
-  </div>
-  </div>
-  <!--/.Basketball Training Modal-->
-
-  <!--Mobility Training Modal-->
-  <div class="modal fade" id="mtsuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-notify modal-success" role="document">
-    <!--Content-->
-    <div class="modal-content">
-      <!--Header-->
-      <div class="modal-header">
-        <p class="modalTitle pt-1" style="margin-bottom: auto;">CONGRATULATIONS</p>
-
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true" class="white-text">&times;</span>
-        </button>
-      </div>
-
-      <!--Body-->
-      <div class="modal-body">
-        <div class="text-center">
-          <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
-          <div class="text-left">You have successfully purchased a <strong>monthly subscription</strong> to Ficher Fit's <strong>Mobility Training</strong> program.
-            Thank you for trusting us to join you on your fitness journey!</div>
-        </div>
-      </div>
-
-      <!--Footer-->
-      <div class="modal-footer justify-content-center modalFooter" style="color: #969696; align-items: center;">
-        <div class="row">
-          <div class="col-2" style="background:url('./img/icons/info-circle-icon.svg') center center no-repeat; background-size: 30px 30px;">
-          </div>
-          <div class="col-10 m-0" style="font-size: 15px; margin-left: 0; padding-left: 0;">
-            Please look out for an emailed receipt with further information on how to access our resources and what to expect.
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-    <!--/.Content-->
-  </div>
-  </div>
-  <!--/.Mobility Training Modal-->
-  <!--/.Success windows-->
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
