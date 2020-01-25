@@ -14926,9 +14926,15 @@ var WOW;
 
     if ($navbar.length) {
       if ($navbar.offset().top > SCROLLING_NAVBAR_OFFSET_TOP) {
-        $('.scrolling-navbar').addClass('top-nav-collapse');
+		$('.scrolling-navbar').addClass('top-nav-collapse');
+		$('#ff-logo').removeClass('full-logo');
+		$('#ff-logo').addClass('shrink-logo');
+		document.getElementById("ff-logo").src = "./img/logo/FfLogoWhite.svg";
       } else {
-        $('.scrolling-navbar').removeClass('top-nav-collapse');
+		$('.scrolling-navbar').removeClass('top-nav-collapse');
+		$('#ff-logo').removeClass('shrink-logo');
+		$('#ff-logo').addClass('full-logo');
+		document.getElementById("ff-logo").src = "./img/logo/FfLogotypeWhite.svg";
       }
     }
   });
