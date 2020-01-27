@@ -47,6 +47,31 @@
   </script>
 
   <style type="text/css">
+    html,
+    body,
+    header,
+    .view {
+      height: 100%;
+    }
+
+    @media (max-width: 740px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 1000px;
+      }
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 650px;
+      }
+    }
+
     @media (max-width: 991px) {
               .navbar:not(.top-nav-collapse) {
                   background: #1C2331!important;
@@ -178,7 +203,7 @@
 
       <!--First slide-->
       <div class="carousel-item active">
-        <div class="view" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('./img/pics/background1.png'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+        <div class="view full-page-intro" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('./img/pics/background1.png'); background-repeat: no-repeat; background-size: cover; background-position: center;">
 
             <!-- Mask & flexbox options-->
             <div class="mask d-flex justify-content-center align-items-center">
@@ -192,9 +217,9 @@
                   <!--Grid column-->
                   <div class="white-text text-center w-100">
 
-                    <h1 class="display-4 font-weight-bold main-title" style="line-height: 75px ; font-family: proxima-nova-extra-condensed; font-display: auto; font-style: italic; font-weight:900; font-size: 100px; margin: 0px; padding: 0px;">REACH YOUR FITNESS GOALS</h1>
+                    <h1 class="display-4 font-weight-bold mt-5" style="line-height: 75px ; font-family: proxima-nova-extra-condensed; font-display: auto; font-style: italic; font-weight:900; font-size: 100px; margin: 0px; padding: 0px;">REACH YOUR FITNESS GOALS</h1>
 
-                    <p class="tagline" style="font-family: roboto; margin-top: 0px; padding-top: 0px; font-weight: 100;">
+                    <p id="tagline" style="font-family: roboto; margin-top: 0px; padding-top: 0px; font-weight: 100;">
                       Miami, Florida's most flexible fitness trainer
                     </p>
 
@@ -233,9 +258,9 @@
                   <!--Grid column-->
                   <div class="white-text text-center w-100">
 
-                    <h1 class="display-4 font-weight-bold main-title" style="line-height: 75px ; font-family: proxima-nova-extra-condensed; font-display: auto; font-style: italic; font-weight:900; font-size: 100px; margin: 0px; padding: 0px;">UNLEASH YOUR INNER BALLER</h1>
+                    <h1 class="display-4 font-weight-bold mt-5" style="line-height: 75px ; font-family: proxima-nova-extra-condensed; font-display: auto; font-style: italic; font-weight:900; font-size: 100px; margin: 0px; padding: 0px;">UNLEASH YOUR INNER BALLER</h1>
 
-                    <p class="tagline" style="font-family: roboto; margin-top: 0px; padding-top: 0px; font-weight: 100;">
+                    <p id="tagline" style="font-family: roboto; margin-top: 0px; padding-top: 0px; font-weight: 100;">
                       Train with the female Steph Curry in sunny South Florida
                     </p>
 

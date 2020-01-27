@@ -1,14 +1,12 @@
 /* Required height of parents of the Full Page Carousel for proper displaying carousel itself */
 html,
 body,
-header,
 .view {
   height: 100%; }
 
 /* Full Page Carousel itself*/
 .carousel {
-  height: 100%; 
-  padding-top: 150px;}
+  height: 100%; }
   .carousel .carousel-inner {
     height: 100%; }
     .carousel .carousel-inner .carousel-item,
@@ -40,23 +38,12 @@ header,
 
 /* Intro */
 @media screen and (max-width: 451px) {
-  .main-title {
-    margin-top: 139.2px !important;
-  }
-}
-@media screen and (min-width: 451px) {
-  .main-title {
-    margin-top: 48px !important;
-  }
-}
-
-@media screen and (max-width: 451px) {
-  .tagline {
+  #tagline {
     font-size: 27px;
   }
 }
 @media screen and (min-width: 451px) {
-  .tagline {
+  #tagline {
     font-size: 37px;
   }
 }
