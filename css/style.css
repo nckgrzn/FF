@@ -38,12 +38,23 @@ body,
 
 /* Intro */
 @media screen and (max-width: 451px) {
-  #tagline {
+  .main-title {
+    margin-top: 0px !important;
+  }
+}
+@media screen and (min-width: 451px) {
+  .main-title {
+    margin-top: 3rem !important;
+  }
+}
+
+@media screen and (max-width: 451px) {
+  .tagline {
     font-size: 27px;
   }
 }
 @media screen and (min-width: 451px) {
-  #tagline {
+  .tagline {
     font-size: 37px;
   }
 }
