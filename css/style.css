@@ -40,12 +40,12 @@ header,
 /* Intro */
 @media screen and (max-width: 451px) {
   .main-title {
-    margin-top: 12rem !important;
+    margin-top: 139.2px !important;
   }
 }
 @media screen and (min-width: 451px) {
   .main-title {
-    margin-top: 3rem !important;
+    margin-top: 48px !important;
   }
 }
 
