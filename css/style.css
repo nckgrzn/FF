@@ -139,7 +139,7 @@ body,
 
 /* Custom icons */
 .personal {
-  background: url('../img/icons/icons8-user_group_man_man.svg');
+  background: url('../img/icons/user_group_man_man.svg');
   height: 30px;
   width: 30px;
   display: block;
@@ -148,7 +148,7 @@ body,
 }
 
 .basketball {
-  background: url('../img/icons/icons8-basketball_9.svg');
+  background: url('../img/icons/basketball.svg');
   height: 30px;
   width: 30px;
   display: block;
@@ -157,7 +157,25 @@ body,
 }
 
 .mobility {
-  background: url('../img/icons/icons8-gymnastics.svg');
+  background: url('../img/icons/gymnastics.svg');
+  height: 30px;
+  width: 30px;
+  display: block;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+.gym {
+  background: url('../img/icons/bench-press.svg');
+  height: 30px;
+  width: 30px;
+  display: block;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+.home {
+  background: url('../img/icons/pushups.svg');
   height: 30px;
   width: 30px;
   display: block;
